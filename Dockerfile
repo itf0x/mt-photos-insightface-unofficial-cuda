@@ -1,5 +1,10 @@
-FROM python:3.8.10-buster
+# FROM python:3.8.10-buster
+FROM nvidia/cuda:12.3.2-cudnn9-runtime-ubuntu22.04
 USER root
+
+RUN apt update && \
+    apt install -y python3 pip && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/log/*
 
 WORKDIR /app
 COPY requirements.txt .

@@ -1,7 +1,7 @@
-# MT Photos非官方人脸识别API
+# MT Photos非官方人脸识别cuda-API
 
 - 仅供非商业测试
-- fork自[MT-Photos/mt-photos-deepface](https://github.com/MT-Photos/mt-photos-deepface), 删除了deepface相关，添加基于[deepinsight/insightface](https://github.com/deepinsight/insightface)实现的人脸识别API
+- fork自[kqstone/mt-photos-insightface-unofficial](https://github.com/kqstone/mt-photos-insightface-unofficial), 添加了cuda支持
 
 ## 模型选择
 
@@ -34,7 +34,7 @@ docker pull kqstone/mt-photos-insightface-unofficial:latest
 - 创建及运行容器
 
 ```
-docker run -i -p 8066:8066 -e API_AUTH_KEY=mt_photos_ai_extra --name mt-photos-insightface-unofficial --restart="unless-stopped" kqstone/mt-photos-insightface-unofficial:latest
+docker run -i -p 8066:8066 -e API_AUTH_KEY=mt_photos_ai_extra --name mt-photos-insightface-unofficial-cuda --restart="unless-stopped" --gpus all 1071239216/mt-photos-insightface-unofficial-cuda:latest
 ```
 
 
@@ -43,7 +43,7 @@ docker run -i -p 8066:8066 -e API_AUTH_KEY=mt_photos_ai_extra --name mt-photos-i
 
 可以自行编译打包镜像
 ```bash
-docker build  . -t mt-photos-insightface-unofficial:latest
+docker build  . -t mt-photos-insightface-unofficial-cuda:latest
 ```
 
 ### 下载源码本地运行
