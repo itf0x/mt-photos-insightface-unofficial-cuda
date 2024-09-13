@@ -28,7 +28,7 @@ recognition_model = os.getenv("RECOGNITION_MODEL", "buffalo_l")
 - 下载镜像
 
 ```
-docker pull kqstone/mt-photos-insightface-unofficial:latest
+docker pull 1071239216/mt-photos-insightface-unofficial-cuda:latest
 ```
 
 - 创建及运行容器
